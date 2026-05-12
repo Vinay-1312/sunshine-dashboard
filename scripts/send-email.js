@@ -4,7 +4,7 @@ require('dotenv').config();
 const nodemailer = require('nodemailer');
 const days = require('../data/days.json');
 
-const START_DATE = '2026-05-13';
+const START_DATE = '2026-05-12';
 
 function getTodayDay() {
   const start = new Date(START_DATE);

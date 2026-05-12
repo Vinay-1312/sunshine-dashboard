@@ -1,4 +1,3 @@
-// Change START_DATE to the date you want Day 1 to begin.
-// Change PARTNER_NAME to your partner's name.
-export const START_DATE = '2026-05-13';
-export const PARTNER_NAME = 'Sunshine';
+// Override START_DATE via VITE_START_DATE env var in Vercel, or edit the fallback here.
+export const START_DATE = import.meta.env.VITE_START_DATE || '2026-05-12';
+export const PARTNER_NAME = import.meta.env.VITE_PARTNER_NAME || 'Sunshine';

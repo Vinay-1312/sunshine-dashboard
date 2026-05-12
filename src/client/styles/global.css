@@ -1,0 +1,180 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── App ── */
+.app { min-height: 100vh; transition: background 0.6s ease; }
+
+/* ── Header ── */
+.header {
+  position: relative;
+  padding: 36px 20px 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.vibe-badge {
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.header-sub {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Progress */
+.progress-wrap { max-width: 280px; margin: 0 auto; }
+
+.progress-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.progress-track {
+  height: 4px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+/* Floating emojis */
+.floating-emojis {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-emoji {
+  position: absolute;
+  bottom: -40px;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0);      opacity: 0; }
+  10%  { opacity: 0.55; }
+  85%  { opacity: 0.35; }
+  100% { transform: translateY(-120px); opacity: 0; }
+}
+
+/* ── Cards ── */
+.cards-wrap {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 16px 16px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  border-radius: 18px;
+  padding: 20px 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid;
+}
+
+.card-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.card-body {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Greeting */
+.greeting-wrap { text-align: center; padding: 12px 4px 4px; }
+
+.greeting {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Affirmation */
+.affirmation-text {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* Love note */
+.love-note-text {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Pulse animation on love note card */
+.card-pulse {
+  animation: pulseBorder 3.5s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.06); }
+  50%       { box-shadow: 0 0 18px 4px rgba(255,255,255,0.14); }
+}
+
+/* Reveal button */
+.reveal-btn {
+  background: transparent;
+  border: 1.5px solid;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.reveal-btn:hover { transform: scale(1.03); opacity: 0.85; }
+
+/* Fade in */
+.fade-in {
+  animation: fadeUp 0.65s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
